@@ -112,10 +112,10 @@ else:
 
 preco = float(input('Preço do produto: R$'))
 print('''Formas de pagamento:
-1 - À vista (dinheiro/cheque): 10% de desconto
-2 - À vista (cartão): 5% de desconto
-3 - Em até 2x no cartão: preço normal
-4 - 3x ou mais no cartão: 20% de juros''')
+[1] - À vista (dinheiro/cheque): 10% de desconto
+[2] - À vista (cartão): 5% de desconto
+[3] - Em até 2x no cartão: preço normal
+[4] - 3x ou mais no cartão: 20% de juros''')
 opcao = int(input('Escolha a opção (1-4): '))
 if opcao == 1:
     total = preco * 0.90
@@ -135,7 +135,7 @@ else:
 import random
 
 itens = ['Pedra', 'Papel', 'Tesoura']
-escolha_jogador = int(input('Escolha 1-Pedra, 2-Papel, 3-Tesoura: ')) - 1
+escolha_jogador = int(input('Escolha [1]-Pedra, [2]-Papel, [3]-Tesoura: ')) - 1
 jogador = itens[escolha_jogador]
 computador = random.choice(itens)
 450
