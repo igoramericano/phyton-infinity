@@ -6,7 +6,7 @@ def sorteia(lista):
     for cont in range(0, 5):
         n = randint(1, 10)
         lista.append(n)
-        print(f'{n} ', end='', flush=True)
+        print(f'{n}..', end='', flush=True)
         sleep(0.3)
     print('PRONTO!')
 
