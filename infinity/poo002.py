@@ -1,37 +1,22 @@
-class Veiculo:
-    def __init__(self, marca, ano):
-        self.marca = marca
-        self.ano = ano
-
-    def info(self):
-        print(f"Marca: {self.marca}, Ano: {self.ano}")
+class forma:
+    def calcular_area():
+        return 0
+class retangulo(forma):
+    def __init__(self, base, altura):
+        self.base = base
+        self.altura = altura
     
-    def detalhes(self):
-        print("--- Detalhes do Veículo ---")
-        self.info()
+    def calcular_area(base, altura):
+        return base * altura
+
+class circulo(forma):
+    def __init__(self, raio)
+        self.raio = raio
+
+    def calcular_area(raio):
+        return 3.14 * raio ** 2
     
-class moto(Veiculo):
-    def __init__(self, marca, ano, cilindradas):
-        Veiculo.__init__(self, marca, ano) 
-        self.cilindradas = cilindradas
-
-    def detalhes(self):
-        Veiculo.detalhes(self) 
-        print(f"Tipo: Moto (Cilindradas: {self.cilindradas}cc)")
-
-class caminhão(Veiculo):
-    def __init__(self, marca, ano, capacidade_carga):
-        Veiculo.__init__(self, marca, ano)
-        self.capacidade_carga = capacidade_carga
-
-    def detalhes(self):
-        Veiculo.detalhes(self)
-        print(f"Tipo: Caminhão (Capacidade de Carga: {self.capacidade_carga} kg)")
-
-moto = moto("Honda", 2024, 300)
-caminhão = caminhão("Volvo", 2020, 15000)
-
-print("--- Teste de Polimorfismo ---")
-moto.detalhes()
-print("-" * 20)
-caminhão.detalhes()
+ret1 = retangulo(3,4)
+print(f"Área do retângulo {ret1.calcular_area}")
+cir1 = circulo(5)
+print(f"Área do circulo {cir1.calcular_area}")

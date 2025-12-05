@@ -1,35 +1,58 @@
-class cachorro:
-    # 🛠️ Corrigido: Removido o parâmetro 'raça'
-    def __init__(self, nome):
-        self.nome = nome
-    def fazer_som(self):
-        print(f'{self.nome} late: Au au!')
+class Documento:
+    """
+    Classe base que representa um documento genérico.
+    """
+    def __init__(self):
+        # Construtor vazio, pois não precisamos de atributos iniciais
+        pass 
+        
+    def abrir(self):
+        # Este é o método padrão que será sobrescrito
+        print('Acessando o arquivo de forma genérica (Documento Base).')
 
-class gato:
-    # 🛠️ Corrigido: Removido o parâmetro 'raça'
-    def __init__(self, nome):
-        self.nome = nome
-    def fazer_som(self):
-        print(f'{self.nome} mia: Miau!')
-
-class pássaro:
-    # 🛠️ Corrigido: Removido o parâmetro 'raça'
-    def __init__(self, nome):
-        self.nome = nome
-    def fazer_som(self):
-        print(f'{self.nome} canta: Piu piu!')
-
+class PDF(Documento):
+    def __init__(self):
+        Documento.__init__(self)
     
-def orquestra_animal(lista_animais):
-    for animal in lista_animais:
-        animal.fazer_som()
+    def abrir(self):
+        print('Abrindo documento PDF!')
+    
+class Word(Documento):
+    def __init__(self):
+        Documento.__init__(self)
+    
+    def abrir(self):
+        print('Abrindo documento Word!')
+        
+class Excel(Documento):
+    def __init__(self):
+        Documento.__init__(self)
+        
+    def abrir(self):
+        print('Abrindo documento Excel!')
+        
+        
+def abrir_lista_documentos(lista_doc):
+    print('-' * 40)
+    print('PROCESSANDO LISTA DE DOCUMENTOS'.center(40))
+    print('-' * 40)
+    
+    for doc in lista_doc:
+        doc.abrir() # O Python chama o método correto para cada objeto
+        time.sleep(0.5) # Adicionando um pequeno delay para visualização
+    print('-' * 40)
 
-# ✅ Instanciação corrigida (apenas com o argumento 'nome')
-letty = cachorro("Letty")
-tom = gato("Tom")
-xexéu = pássaro("Xexéu")
+# --- PROGRAMA PRINCIPAL DE TESTE ---
+import time
 
-lista = [letty, tom, xexéu]
+# 1. Cria as instâncias (objetos)
+pdf = PDF()
+word = Word()
+excel = Excel()
+doc = Documento()
 
-print("--- A Orquestra dos Animais ---")
-orquestra_animal(lista)
+# 2. Cria a lista de documentos (aceita todos os tipos!)
+lista_de_arquivos = [word, pdf, excel, doc]
+
+# 3. Chama a função final
+abrir_lista_documentos(lista_de_arquivos)
